@@ -12,6 +12,7 @@ import scala.collection.mutable.ListBuffer
 import scala.concurrent.duration.DurationInt
 import scala.io.StdIn
 import akka.event.slf4j.Slf4jLogger
+import ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.ExecutionContextExecutor
@@ -21,7 +22,10 @@ def main(): Unit = {
 
   implicit val system: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "my-system")
   implicit val executionContext: ExecutionContextExecutor = system.executionContext
-  val route = StatisticController.route
+
+  val route = cors() {
+    StatisticController.route
+  }
 
   val bindingFuture = Http().newServerAt("localhost", 8081).bind(route)
 

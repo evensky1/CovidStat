@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Runner.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/client/CovidApiClient.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/client/model/DayInfo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/model/CountryDayStatistic.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/model/CountryStatistic.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/model/StatisticRequest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" afterDir="false" />
+    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Runner.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Runner.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,8 +76,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/fromt/IdeaSpace/InnowiseProjects/ScalaTest",
+    "last_opened_file_path": "C:/Users/fromt/IdeaSpace/InnowiseProjects/CovidStatClient",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -130,8 +119,20 @@
       <workItem from="1682331015684" duration="3461000" />
       <workItem from="1682334508883" duration="1304000" />
       <workItem from="1682335967365" duration="2287000" />
-      <workItem from="1682338345256" duration="2933000" />
+      <workItem from="1682338345256" duration="3331000" />
+      <workItem from="1682347748998" duration="757000" />
+      <workItem from="1682352517447" duration="784000" />
+      <workItem from="1682359506722" duration="6544000" />
+      <workItem from="1682418899173" duration="7872000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1682345190773</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682345190773</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,5 +148,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

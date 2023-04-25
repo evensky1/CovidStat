@@ -25,15 +25,16 @@ class CovidApiService {
   }
 
   private def countDayStatisticForDateRange(infos: Seq[DayInfo]): Seq[CountryDayStatistic] = {
+
+    println(infos)
+
     val dayStatisticList = ListBuffer[CountryDayStatistic]()
 
     for (i <- 0 until infos.length - 1) {
 
       val current = infos.apply(i)
       val next = infos.apply(i + 1)
-      if (next.country == "Poland") {
-        println(next)
-      }
+
       dayStatisticList.addOne(
         CountryDayStatistic(current.country, next.cases - current.cases, current.date)
       )

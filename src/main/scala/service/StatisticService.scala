@@ -25,8 +25,6 @@ class StatisticService {
       covidApiService.getDayStatistics(countryName, from, to)
     }).map(dayStats => {
 
-      println(dayStats)
-
       val maxCasesDay = dayStats.maxBy(_.newCases)
       val minCasesDay = dayStats.minBy(_.newCases)
 

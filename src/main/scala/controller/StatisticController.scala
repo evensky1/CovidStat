@@ -9,11 +9,13 @@ import akka.http.scaladsl.model.StatusCodes.Created
 import akka.http.scaladsl.server.{Directives, Route}
 import play.api.libs.json.Json
 
+import java.time.temporal.ChronoUnit
+
 object StatisticController extends Directives {
 
   private val statisticService = StatisticService()
 
-  def route: Route = path("stat") {
+  def route: Route = path("api" / "stat") {
     post {
       entity(as[String]) { jsonStr =>
 
@@ -21,7 +23,9 @@ object StatisticController extends Directives {
         val statisticRequest = jsValue.get
 
         val statisticFuture = statisticService.getMaxAndMinForPeriodByCountry(
-          statisticRequest.countries, statisticRequest.from.toInstant, statisticRequest.to.toInstant
+          statisticRequest.countries,
+          statisticRequest.from.toInstant.plus(3, ChronoUnit.HOURS),
+          statisticRequest.to.toInstant.plus(3, ChronoUnit.HOURS).plus(1, ChronoUnit.DAYS)
         )
 
         onSuccess(statisticFuture) { statisticSequence =>
