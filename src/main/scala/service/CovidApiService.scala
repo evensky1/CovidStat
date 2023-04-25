@@ -14,7 +14,7 @@ import scala.concurrent.{ExecutionContextExecutor, Future}
 
 class CovidApiService {
 
-  implicit val serviceActorSystem: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "my-system")
+  implicit val serviceActorSystem: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "api-system")
   implicit val executionContext: ExecutionContextExecutor = serviceActorSystem.executionContext
 
   private val covidApiClient: CovidApiClient = new CovidApiClient()
@@ -25,9 +25,6 @@ class CovidApiService {
   }
 
   private def countDayStatisticForDateRange(infos: Seq[DayInfo]): Seq[CountryDayStatistic] = {
-
-    println(infos)
-
     val dayStatisticList = ListBuffer[CountryDayStatistic]()
 
     for (i <- 0 until infos.length - 1) {

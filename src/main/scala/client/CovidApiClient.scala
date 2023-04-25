@@ -16,7 +16,7 @@ import java.time.Instant
 import scala.concurrent.{ExecutionContext, Future}
 
 class CovidApiClient {
-  implicit val fetchActor: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "my-system")
+  implicit val fetchActor: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "fetch-system")
   implicit val executionContext: ExecutionContext = fetchActor.executionContext
 
   def fetchByCountryName(countryName: String, from: Instant, to: Instant): Future[Seq[DayInfo]] = {

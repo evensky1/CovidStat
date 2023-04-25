@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
+    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="Add logging and cors">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/cache/CacheProvider.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Runner.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Runner.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/client/CovidApiClient.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/client/CovidApiClient.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" afterDir="false" />
     </list>
@@ -58,6 +58,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Package Object" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,7 +130,7 @@
       <workItem from="1682347748998" duration="757000" />
       <workItem from="1682352517447" duration="784000" />
       <workItem from="1682359506722" duration="6544000" />
-      <workItem from="1682418899173" duration="7872000" />
+      <workItem from="1682418899173" duration="11376000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1682345190773</created>
@@ -132,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682345190773</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add logging and cors">
+      <created>1682437416227</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682437416227</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +165,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Add logging and cors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add logging and cors" />
   </component>
 </project>

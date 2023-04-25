@@ -9,7 +9,6 @@ import akka.http.scaladsl.server.Directives.path
 import akka.stream.ActorMaterializer
 
 import scala.collection.mutable.ListBuffer
-import scala.concurrent.duration.DurationInt
 import scala.io.StdIn
 import akka.event.slf4j.Slf4jLogger
 import ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors
@@ -20,7 +19,7 @@ import scala.concurrent.ExecutionContextExecutor
 @main
 def main(): Unit = {
 
-  implicit val system: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "my-system")
+  implicit val system: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "runner-system")
   implicit val executionContext: ExecutionContextExecutor = system.executionContext
 
   val route = cors() {
