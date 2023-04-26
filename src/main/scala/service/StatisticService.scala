@@ -3,15 +3,17 @@ package service
 
 import cache.CacheProvider
 import client.CovidApiClient
+import client.exception.NotFoundException
 import client.model.DayInfo
 import model.{CountryDayStatistic, CountryStatistic, StatisticRequest}
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
-import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.{Sink, Source}
+import akka.stream.{ActorAttributes, ActorMaterializer, Supervision}
 
 import java.time.Instant
+import java.time.temporal.ChronoUnit
 import scala.concurrent.Future
 
 class StatisticService {
@@ -22,11 +24,19 @@ class StatisticService {
 
   def getMaxAndMinForPeriodByCountry(countries: List[String], from: Instant, to: Instant): Future[Seq[CountryStatistic]] = {
 
-    Source(countries).mapAsyncUnordered(4)(countryName => {
-      CacheProvider.cache
-        .getOrLoad((countryName, from, to), _ => covidApiService.getDayStatistics(countryName, from, to))
+    val decider: Supervision.Decider = {
+      case _: NotFoundException => Supervision.Resume
+      case _ => Supervision.Stop
+    }
 
-    }).map(dayStats => {
+    Source(countries)
+      .mapAsyncUnordered(4)(countryName => {
+        CacheProvider.cache
+          .getOrLoad((countryName, from, to), _ => covidApiService.getDayStatistics(countryName, from, to))
+
+      })
+      .withAttributes(ActorAttributes.supervisionStrategy(decider))
+      .map(dayStats => {
 
       val maxCasesDay = dayStats.maxBy(_.newCases)
       val minCasesDay = dayStats.minBy(_.newCases)

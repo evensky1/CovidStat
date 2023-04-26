@@ -1,7 +1,8 @@
 package com.innowise.covid
 package client
 
-import model.DayInfo
+import client.exception.NotFoundException
+import client.model.DayInfo
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
@@ -13,6 +14,7 @@ import akka.stream.ActorMaterializer
 import play.api.libs.json.{JsValue, Json}
 
 import java.time.Instant
+import java.time.temporal.ChronoUnit
 import scala.concurrent.{ExecutionContext, Future}
 
 class CovidApiClient {
@@ -20,14 +22,19 @@ class CovidApiClient {
   implicit val executionContext: ExecutionContext = fetchActor.executionContext
 
   def fetchByCountryName(countryName: String, from: Instant, to: Instant): Future[Seq[DayInfo]] = {
-    val request: HttpRequest = createHttpRequest(countryName, from.toString, to.toString)
+    val request: HttpRequest = createHttpRequest(countryName, from.toString, to.plus(1, ChronoUnit.DAYS).toString)
 
     Http().singleRequest(request).flatMap { res =>
       Unmarshal(res).to[String].map { data =>
 
-        Json.parse(data)
-          .validate[Seq[DayInfo]]
-          .get
+        val jsResult = Json.parse(data).validate[Seq[DayInfo]]
+
+        if (jsResult.isSuccess) {
+          jsResult.get
+        } else {
+          val errorString = (Json.parse(data) \ "message").validate[String].get
+          throw NotFoundException(errorString)
+        }
       }
     }
   }

@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="Add logging and cors">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/cache/CacheProvider.scala" afterDir="false" />
+    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="Add caching">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/client/exception/NotFoundException.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/BaseControllerTest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/StatisticControllerTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Runner.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Runner.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/client/CovidApiClient.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/client/CovidApiClient.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,12 +87,12 @@
   "keyToString": {
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/fromt/IdeaSpace/InnowiseProjects/CovidStatClient",
+    "last_opened_file_path": "C:/Users/fromt/IdeaSpace/InnowiseProjects/CovidStat",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="ScalaTest.StatisticControllerTest">
     <configuration name="main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.innowise.covid.main" />
       <module name="CovidStat" />
@@ -104,8 +106,67 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StatisticControllerTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="CovidStat" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="testClassPath" value="com.innowise.covid.StatisticControllerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatisticControllerTest.StatisticController when Negative POST /api/stat should return 201 CREATED and empty CountryStatistic array" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="CovidStat" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="com.innowise.covid.StatisticControllerTest" />
+      <option name="testName" value="StatisticController when Negative POST /api/stat should return 201 CREATED and empty CountryStatistic array" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatisticControllerTest.StatisticController when Negative POST /api/stat should return 201 CREATED and empty CountryStatistic array&#10;StatisticController when Negative POST /api/stat should return error" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="CovidStat" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="com.innowise.covid.StatisticControllerTest" />
+      <option name="testName" value="StatisticController when Negative POST /api/stat should return 201 CREATED and empty CountryStatistic array&#10;StatisticController when Negative POST /api/stat should return error" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatisticControllerTest.StatisticController when POST /api/stat should return 201 CREATED and CountryStatistic array" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="CovidStat" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="com.innowise.covid.StatisticControllerTest" />
+      <option name="testName" value="StatisticController when POST /api/stat should return 201 CREATED and CountryStatistic array" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.StatisticControllerTest" />
+        <item itemvalue="ScalaTest.StatisticControllerTest.StatisticController when Negative POST /api/stat should return 201 CREATED and empty CountryStatistic array&#10;StatisticController when Negative POST /api/stat should return error" />
+        <item itemvalue="ScalaTest.StatisticControllerTest.StatisticController when Negative POST /api/stat should return 201 CREATED and empty CountryStatistic array" />
+        <item itemvalue="ScalaTest.StatisticControllerTest.StatisticController when POST /api/stat should return 201 CREATED and CountryStatistic array" />
         <item itemvalue="Application.main" />
       </list>
     </recent_temporary>
@@ -130,7 +191,8 @@
       <workItem from="1682347748998" duration="757000" />
       <workItem from="1682352517447" duration="784000" />
       <workItem from="1682359506722" duration="6544000" />
-      <workItem from="1682418899173" duration="11376000" />
+      <workItem from="1682418899173" duration="17854000" />
+      <workItem from="1682499409566" duration="12840000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1682345190773</created>
@@ -146,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682437416227</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add caching">
+      <created>1682440847908</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682440847908</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +235,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add logging and cors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add logging and cors" />
+    <MESSAGE value="Add caching" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add caching" />
   </component>
 </project>

@@ -22,10 +22,15 @@ object StatisticController extends Directives {
         val jsValue = Json.parse(jsonStr).validate[StatisticRequest]
         val statisticRequest = jsValue.get
 
+        val gmtOffset = statisticRequest.from.getTimezoneOffset + 3
+
+        val fromValueInstant = statisticRequest.from.toInstant.minus(gmtOffset, ChronoUnit.MINUTES)
+        val toValueInstant = statisticRequest.to.toInstant.minus(gmtOffset, ChronoUnit.MINUTES)
+
         val statisticFuture = statisticService.getMaxAndMinForPeriodByCountry(
           statisticRequest.countries,
-          statisticRequest.from.toInstant.plus(3, ChronoUnit.HOURS),
-          statisticRequest.to.toInstant.plus(3, ChronoUnit.HOURS).plus(1, ChronoUnit.DAYS)
+          fromValueInstant,
+          toValueInstant
         )
 
         onSuccess(statisticFuture) { statisticSequence =>
