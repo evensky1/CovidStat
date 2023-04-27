@@ -19,7 +19,7 @@ class CovidApiService {
 
   private val covidApiClient: CovidApiClient = new CovidApiClient()
 
-  def getDayStatistics(countryName: String, from: Instant, to: Instant): Future[Seq[CountryDayStatistic]] = {
+  def getDayStatisticSeq(countryName: String, from: Instant, to: Instant): Future[Seq[CountryDayStatistic]] = {
 
     covidApiClient.fetchByCountryName(countryName, from, to).map(countDayStatisticForDateRange)
   }

@@ -32,7 +32,7 @@ class StatisticService {
     Source(countries)
       .mapAsyncUnordered(4)(countryName => {
         CacheProvider.cache
-          .getOrLoad((countryName, from, to), _ => covidApiService.getDayStatistics(countryName, from, to))
+          .getOrLoad((countryName, from, to), _ => covidApiService.getDayStatisticSeq(countryName, from, to))
 
       })
       .withAttributes(ActorAttributes.supervisionStrategy(decider))

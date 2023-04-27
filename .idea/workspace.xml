@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="Add caching">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/client/exception/NotFoundException.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/scala/BaseControllerTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/scala/StatisticControllerTest.scala" afterDir="false" />
+    <list default="true" id="7bc3bf6f-75d3-4ee7-803f-e7c053481366" name="Changes" comment="Add tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/client/CovidApiClient.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/client/CovidApiClient.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/controller/StatisticController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/CovidApiService.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/service/StatisticService.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,15 +77,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/fromt/IdeaSpace/InnowiseProjects/CovidStat",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fromt/IdeaSpace/InnowiseProjects/CovidStat&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="ScalaTest.StatisticControllerTest">
     <configuration name="main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.innowise.covid.main" />
@@ -192,7 +186,8 @@
       <workItem from="1682352517447" duration="784000" />
       <workItem from="1682359506722" duration="6544000" />
       <workItem from="1682418899173" duration="17854000" />
-      <workItem from="1682499409566" duration="12840000" />
+      <workItem from="1682499409566" duration="13468000" />
+      <workItem from="1682614240700" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1682345190773</created>
@@ -215,7 +210,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682440847908</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add corrupted country name exception handling">
+      <created>1682515411100</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682515411100</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add tests">
+      <created>1682515448099</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682515448099</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +245,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add logging and cors" />
     <MESSAGE value="Add caching" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add caching" />
+    <MESSAGE value="Add corrupted country name exception handling" />
+    <MESSAGE value="Add tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests" />
   </component>
 </project>
